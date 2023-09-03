@@ -26,7 +26,9 @@ public class LoginStepDefinitions {
 
 	@BeforeAll
 	public static void beforeAll() {
-		System.setProperty("webdriver.edge.driver", "D:\\Ruby\\study\\workspace\\ds-algo\\src\\test\\resources\\drives\\msedgedriver.exe");	
+		String currentDirectory = System.getProperty("user.dir");
+		String browserDriverDirectory = currentDirectory + "/../browser_drivers/";
+		System.setProperty("webdriver.edge.driver", browserDriverDirectory + "msedgedriver.exe");	
 	}
 	@Before
 	public void before() {
