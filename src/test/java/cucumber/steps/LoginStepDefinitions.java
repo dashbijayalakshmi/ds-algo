@@ -109,16 +109,16 @@ public class LoginStepDefinitions {
 		loginPage.btnSigIn();
 	}
 
-	@When("User enters username from given rownumber {int} and columnumber {int}")
-	public void user_enters_username_as(int rowNumber,int columNumber) {
-		String newUserName = ExcelReader.getExcelValue(rowNumber,columNumber);
+	@When("User enters username from given sheetname {string} rownumber {int} and columnumber {int}")
+	public void user_enters_username_as(String sheetname,int rowNumber,int columNumber) {
+		String newUserName = ExcelReader.getExcelValue(sheetname, rowNumber, columNumber);
 		loginPage.txtIdName(newUserName);
 
 	}
 
-	@When("User enters signIn password from given rownumber {int} and columnumber {int}")
-	public void user_enters_signIn_password_as(int rowNumber,int columNumber) {
-		String newPassword=ExcelReader.getExcelValue(rowNumber, columNumber);
+	@When("User enters signIn password from given sheetname {string} rownumber {int} and columnumber {int}")
+	public void user_enters_signIn_password_as(String sheetname,int rowNumber,int columNumber) {
+		String newPassword=ExcelReader.getExcelValue(sheetname, rowNumber, columNumber);
 		loginPage.txtIdPassword(newPassword);
 	}
 
@@ -154,9 +154,9 @@ public class LoginStepDefinitions {
 		homePage.btnTryHere();
 	}
 
-	@When("User enters code from given rownumber {int} and columnumber {int}")
-	public void User_enters_code(int rowNumber,int columNumber) {
-		String code=ExcelReader.getCodeValue(rowNumber, columNumber);
+	@When("User enters code from given sheetname {string} rownumber {int} and columnumber {int}")
+	public void User_enters_code(String sheetname,int rowNumber,int columNumber) {
+		String code=ExcelReader.getExcelValue(sheetname, rowNumber, columNumber);
 		homePage.enterCodeUsingAction(code);
 			
 	}
@@ -167,9 +167,9 @@ public class LoginStepDefinitions {
 		homePage.btnRunCode();
 
 	}
-	@Then("User should validat on code output from excel rownumber {int} and columnumber {int}")
-	public void User_should_validate_on_code_output_from_excel(int rowNumber,int columNumber) {
-		String code=ExcelReader.getCodeValue(rowNumber, columNumber);
+	@Then("User should validat on code output from excel sheetname {string} rownumber {int} and columnumber {int}")
+	public void User_should_validate_on_code_output_from_excel(String sheetname,int rowNumber,int columNumber) {
+		String code=ExcelReader.getExcelValue(sheetname, rowNumber, columNumber);
 		homePage.lebalValidCode(code);
 			
 	}
