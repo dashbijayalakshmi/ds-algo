@@ -22,12 +22,12 @@ public class ExcelReader {
 		}
 	}
 
-	public static String getExcelValue(int rowNumber, int columNumber) {
+	public static String getExcelValue(String sheetName,int rowNumber, int columNumber) {
 		String value = "";
 		try {
 			InputStream fis = ExcelReader.class.getClassLoader().getResourceAsStream(excelFilePath);
 			XSSFWorkbook excelWorkbook = new XSSFWorkbook(fis);
-			XSSFSheet excelSheet = excelWorkbook.getSheetAt(1);
+			XSSFSheet excelSheet = excelWorkbook.getSheet(sheetName);
 			XSSFRow row = excelSheet.getRow(rowNumber);
 			XSSFCell cell = row.getCell(columNumber);
 			value = getCellValue(cell);
@@ -40,23 +40,6 @@ public class ExcelReader {
 		return value;
 	}
 	
-	public static String getCodeValue(int rowNumber, int columNumber) {
-		String value="";
-		try {
-			InputStream fis = ExcelReader.class.getClassLoader().getResourceAsStream(excelFilePath);
-			XSSFWorkbook excelWorkbook = new XSSFWorkbook(fis);
-			XSSFSheet excelSheet = excelWorkbook.getSheetAt(0);
-			XSSFRow row = excelSheet.getRow(rowNumber);
-			XSSFCell cell = row.getCell(columNumber);
-			value = getCellValue(cell);
-			excelWorkbook.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return value;
-		
-	}
+
 
 }

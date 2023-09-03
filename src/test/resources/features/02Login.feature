@@ -7,8 +7,8 @@ Feature:  Verify Login  for https://dsportalapp.herokuapp.com
    When User clicks on Get Started
    And Homepage should be displayed with text "NumpyNinja"
    And User clicks on Sign in
-   And User enters username from given rownumber 1 and columnumber 0
-   And User enters signIn password from given rownumber 1 and columnumber 1
+   And User enters username from given sheetname "Sheet2" rownumber 1 and columnumber 0
+   And User enters signIn password from given sheetname "Sheet2" rownumber 1 and columnumber 1
    And User clicks on login
    Then Homepage should be displayed with text "NumpyNinja"
    And User clicks on Logout
@@ -19,8 +19,8 @@ Feature:  Verify Login  for https://dsportalapp.herokuapp.com
    When User clicks on Get Started
    And  Homepage should be displayed with text "NumpyNinja"
    And User clicks on Sign in
-   And User enters username from given rownumber 2 and columnumber 0
-   And User enters signIn password from given rownumber 2 and columnumber 1
+   And User enters username from given sheetname "Sheet2" rownumber 2 and columnumber 0
+   And User enters signIn password from given sheetname "Sheet2" rownumber 2 and columnumber 1
    And User clicks on login
    Then Invalid homepage should be displayed with text "Invalid Username and Password"
   
